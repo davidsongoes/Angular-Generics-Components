@@ -1,11 +1,35 @@
 <mat-card>
   <mat-card-title>Actions Buttons</mat-card-title>
   <mat-card-content> </mat-card-content>
-  <mat-card-actions
-    style="display: flex; justify-content: center; margin-bottom: 15px"
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    "
   >
-    <button mat-raised-button color="accent">Start First Component</button>
-    <button mat-raised-button color="primary">Start Second Component</button>
-    <button mat-raised-button color="warn">Start Third Component</button>
-  </mat-card-actions>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="snackBar.openSnackBar('Started from the first button', 'Close')"
+    >
+      Start First Action
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="snackBar.openSnackBar('Started from the second button', 'Close')"
+    >
+      Start Second Action
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="snackBar.openSnackBar('Started from the third button', 'Close')"
+    >
+      Start Third Action
+    </button>
+  </div>
 </mat-card>
+<app-snack-bar #snackBar></app-snack-bar>
